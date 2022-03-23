@@ -46,7 +46,7 @@ The data should be formatted in CSR, following GPOP's instruction. A toy dataset
     fastCorder = 7 (a highly parallized Corder)
 
 
-### DBG
+### Ligra
 Replace the ```dbg.h``` file in the [DBG](https://github.com/faldupriyank/dbg)'s workspace with the patch code from our ```./ligra-patch``` folder. 
 
 Then, follow DBG's instruction to execute the applications.
