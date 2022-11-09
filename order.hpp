@@ -239,6 +239,12 @@ public:
         std::cout << "partition size: " << params::partition_size  << " num of large: " << num_large_per_seg << " num of small: " << num_small_per_seg << '\n';
         unsigned last_cls = num_partitions - 1;
 
+        while( (num_large_per_seg * last_cls > segment_large.size()) ||
+                (num_small_per_seg * last_cls > segment_small.size())) 
+            {
+                last_cls -= 1;
+            }
+            
         #pragma omp parallel for schedule(static) num_threads(max_threads)
         for(unsigned i = 0; i < last_cls; i++) {
             unsigned index = i * params::partition_size;
